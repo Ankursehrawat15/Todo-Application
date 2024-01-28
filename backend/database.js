@@ -1,4 +1,4 @@
-const mongoose = require("mongose");
+const mongoose = require("mongoose");
 
 // mongodb url : mongodb+srv://ankursehrawat15:Mvhnsm4FoMAbfkiW@cluster0.laovrts.mongodb.net/
 mongoose.connect("mongodb+srv://ankursehrawat15:Mvhnsm4FoMAbfkiW@cluster0.laovrts.mongodb.net/");
@@ -8,5 +8,9 @@ const todoSchema = mongoose.Schema({
     completed: Boolean
 });
 
+
 const todo = mongoose.model('todos', todoSchema);
 
+module.exports = {
+    todo
+}
