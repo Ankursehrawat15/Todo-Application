@@ -1,2 +1,0 @@
-- Connect cloud Mongodb 
-- add frontend which connects with backend 
