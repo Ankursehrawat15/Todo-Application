@@ -1,11 +1,13 @@
 const express = require('express');
 const { createTodo, updateTodo } = require('./types');
 const { todo } = require('./database');
+const cors = require("cors");
 
 
 const app = express();
 
 app.use(express.json());
+app.use(cors());
 
 app.get('/list',async function(req, res){
 
