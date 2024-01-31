@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import './App.css'
 import CreateTodo from './components/CreateTodo'
 import Todos from './components/Todos'
@@ -11,13 +11,13 @@ function App() {
   
   // getting data from backend and updating state todos
   // issue: this continously sends get request on the server this is not the right way
+ useEffect(() => {
   fetch("http://localhost:3000/list").then(async function(res){
-      const json = await res.json();
-      setTodos(json.todos);
+    const json = await res.json();
+    setTodos(json.todos);
   }) 
-
-
-
+ },[todos]) 
+  
   return (
      <div>
       <CreateTodo></CreateTodo>
